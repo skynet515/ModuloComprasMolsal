@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Compras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <div class="container-xl px-4">
+            <div class="page-header-content pt-3">
+                <div class="row align-items-center justify-content-between">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h3 class="page-header-title">
+                                Compras
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="container col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-body">
+                        <form>
+                            <div class="row gx-3 mb-3 ">
+
+                                <div class="col-md-3">
+                                    Fecha desde:
+                                    <input class="form-control" type="date" />
+                                </div>
+                                <div class="col-md-3">
+                                    Fecha hasta:
+                                    <input class="form-control" type="date" />
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <button class="btn btn-primary mt-4" type="button"><i class="fas fa-search"></i> Consultar</button>
+                                </div>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <button class="btn btn-success" type="button"><i class="fas fa-plus"></i> Nuevo</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Compras</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Orden</th>
+                                            <th>Cod. Proveedor</th>
+                                            <th>Nombre</th>
+                                            <th>Factura</th>
+                                            <th>Monto</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>002425</td>
+                                            <td>0170</td>
+                                            <td>Summa</td>
+                                            <td>21DS000C1231</td>
+                                            <td>9,120.00</td>
+                                            <td>Recibido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>002426</td>
+                                            <td>0045</td>
+                                            <td>Pricesmart</td>
+                                            <td>21DS000C85404</td>
+                                            <td>500.50</td>
+                                            <td>Recibido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>002427</td>
+                                            <td>0035</td>
+                                            <td>Calleja</td>
+                                            <td>21DS000F0078</td>
+                                            <td>800.50</td>
+                                            <td>Planeado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>002428</td>
+                                            <td>0198</td>
+                                            <td>A&0 S.A DE C.V</td>
+                                            <td>21DS000F0078</td>
+                                            <td>15,845.00</td>
+                                            <td>Transito</td>
+                                        </tr>
+                                        <tr>
+                                            <td>002429</td>
+                                            <td>0005</td>
+                                            <td>McCormick</td>
+                                            <td>21DS000F0078</td>
+                                            <td>22,950.00</td>
+                                            <td>Recibido</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

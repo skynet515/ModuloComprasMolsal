@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Existencias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <main>
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-3">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto mt-4">
+                                <h3 class="page-header-title">
+                                    Existencias
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="container col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-body">
+                            <form>
+                                <div class="row gx-3 mb-3 ">
+
+                                    <div class="col-md-3">
+                                        Fecha desde:
+                                        <input class="form-control" type="date" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        Fecha hasta:
+                                        <input class="form-control" type="date" />
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <button class="btn btn-primary mt-4" type="button"><i class="fas fa-search"></i> Consultar</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Existencias</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Bodega</th>
+                                                <th>Nombre</th>
+                                                <th>Categoría</th>
+                                                <th>Precio</th>
+                                                <th>Estado</th>
+                                                <th>Disponibilidad</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>0001</td>
+                                                <td>Bodega Central</td>
+                                                <td>Café Instantaneo</td>
+                                                <td>Productos instantaneas</td>
+                                                <td>1.25</td>
+                                                <td>Disponible</td>
+                                                <td>40</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0002</td>
+                                                <td>Bodega Central</td>
+                                                <td>Sopa Maruchan Vaso</td>
+                                                <td>Productos instantaneas</td>
+                                                <td>1.50</td>
+                                                <td>Disponible</td>
+                                                <td>15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0003</td>
+                                                <td>Bodega Merliot</td>
+                                                <td>Yogurt</td>
+                                                <td>Productos Lacteos</td>
+                                                <td>0.75</td>
+                                                <td>Disponible</td>
+                                                <td>17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0004</td>
+                                                <td>Bodega Central</td>
+                                                <td>Té Manzanilla</td>
+                                                <td>Bebidas</td>
+                                                <td>3.00</td>
+                                                <td>Disponible</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0005</td>
+                                                <td>Bodega Merliot</td>
+                                                <td>Pan de Caja</td>
+                                                <td>Pan</td>
+                                                <td>2.75</td>
+                                                <td>Disponible</td>
+                                                <td>15</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
