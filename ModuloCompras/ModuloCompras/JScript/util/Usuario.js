@@ -22,6 +22,8 @@ function fnValidarUsuario() {
     var nombreUsuario = $("#txtNombreUsuario").val().length > 0;
     var clave = $("#txtClave").val().length > 0;
 
+   
+
     if (!nombreUsuario) {
         $("#txtNombreUsuario").addClass("border-danger").focus();
         $("#val-nombreUsuario").removeAttr("hidden");
@@ -33,7 +35,31 @@ function fnValidarUsuario() {
     }
 
 
-    if (nombreUsuario==true && clave==true) {
-        NotificacionSimple("Bienvenido", "Esta cargando su espacio de trabajo", "2000", url + "Home/Index");
+    if (nombreUsuario == true && clave == true) {
+        
+        var login = {
+            NombreUsuario: $("#txtNombreUsuario").val(),
+            Clave: $("#txtClave").val()
+        }
+
+        $.ajax({
+            url: $("#hdnApiUrl").val() + 'Auth/Login',
+            dataType: 'JSON',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(
+                login
+            ),
+            success: function (data) {
+                if (data.status == 1) {
+                    NotificacionSimple("Bienvenido", "Esta cargando su espacio de trabajo", "2000", url + "Home/Index");
+                } else {
+                    MensajeDeError("Error", data.message);
+                }
+            }, error: function () {
+                MensajeDeError("Error", "No se pudo realizar la autenticacion");
+            }
+        })
+        
     }
 }

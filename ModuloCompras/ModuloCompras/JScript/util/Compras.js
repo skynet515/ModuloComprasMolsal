@@ -23,6 +23,9 @@
         $("#val-txtProveedorHasta").attr("hidden", true);
     });
 
+    //Listar Compras
+    fnListarCompras();
+
 });
 
 
@@ -54,4 +57,37 @@ function fnGuardarCompra() {
         MensajeDeExito("Exito", "Planificador guardado correctamente", url + 'Home/Index');
         //MensajeDeError("Error", "No se pudo realizar el planning");
     }
+
+
+}
+
+function fnListarCompras() {
+    var urlAPi = $("#hdnApiUrl").val();
+
+
+    $.ajax({
+        type: "GET",
+        url: urlAPi + 'Compras/ListarCompras',
+        success: function (data) {
+            var s = '';
+            var oTable = $("#tblCompras").DataTable();
+            oTable.clear().draw();
+
+            for (var i = 0; i < data.data.length; i++) {
+
+                s += '<tr>';
+                s += '<td>' + data.data[i].idFactura + '</td>';
+                s += '<td>000' + data.data[i].idProveedor + '</td>';
+                s += '<td>' + data.data[i].idProveedor + '</td>';
+                s += '<td>' + data.data[i].correlativo + '</td>';
+                s += '<td>' + data.data[i].total + '</td>';
+                s += '<td> Activo. </td>';
+                s += '</tr>';
+
+                const tr = $(s);
+                oTable.row.add(tr[i]).draw();
+            }
+        }
+
+    })
 }
